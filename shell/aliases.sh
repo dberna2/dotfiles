@@ -1,12 +1,20 @@
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias ll="ls -l"
 alias la="ls -la"
-alias ~="cd ~"
-alias dotfiles='cd $DOTFILES_PATH'
+
+#Docker
+alias dkps="docker ps"
+alias dkstr="$DOTLY_PATH/bin/dot docker start"
+alias dkstp="$DOTLY_PATH/bin/dot docker stop"
+alias dkconn="$DOTLY_PATH/bin/dot docker connect"
+alias dkst="docker stats"
+alias dkpsa="docker ps -a"
+alias dkimgs="docker images"
+alias dkcpup="docker-compose up -d"
+alias dkcpdown="docker-compose down"
+alias dkcpstart="docker-compose start"
+alias dkcpstop="docker-compose stop"
 
 # Git
 alias gaa="git add -A"
@@ -21,6 +29,17 @@ alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
 alias gl='$DOTLY_PATH/bin/dot git pretty-log'
+
+#Maven
+alias mci="mvn clean install"
+alias mcist="mvn clean install -DskipTests"
+alias mfc="mvn git-code-format:format-code"
+
+#System
+alias fuck="sudo !!"
+
+#File
+alias count="wc -l"
 
 # Utils
 alias k='kill -9'
