@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? This command shows all changen on stagin area 
+##?
+##? Usage:
+##?    cat-file
+
+if (! git::is_in_repo); then
+  echo "The current path doesn't have a git repo 😞"
+  exit 0
+fi
+
+git cat-file -p $1

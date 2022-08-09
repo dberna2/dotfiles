@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? This command shows all local and remote branches 
+##?
+##? Usage:
+##?    pretty-branch
+
+if (! git::is_in_repo); then
+  echo "The current path doesn't have a git repo 😞"
+  exit 0
+fi
+ 
+branch_name=$(git --no-pager branch -vv | fzf | awk '{gsub(/\*/, ""); print $1}')
+
+if [[ -n branch_name ]]; then
+    git checkout $branch_name
+else
+    echo "You haven't selected any branch"
+fi
+
+
+

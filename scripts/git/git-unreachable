@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? This option is intended only to seek confirmations that used to be in a reference, but now they are not
+##?
+##? Usage:
+##?    unrechable
+
+if (! git::is_in_repo); then
+  echo "The current path doesn't have a git repo 😞"
+  exit 0
+fi
+
+git fsck --unreachable --no-reflogs
