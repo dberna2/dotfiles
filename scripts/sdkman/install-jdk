@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+if [ -d $SDKMAN_DIR ]; then
+    jdk_version=$(sdk list java | fzf | awk '{print $(NF)}')
+    sdk install java $jdk_version
+    log::success "🚀 Installed JDK-$jdk_version successfully"
+fi
+
+
+

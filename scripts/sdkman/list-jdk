@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? List all JDKs installed whit sdkman 
+##?
+##? Usage:
+##?    list-sdk
+
+if [ -d "$SDKMAN_DIR/candidates/java" ]; then
+    ls "$SDKMAN_DIR/candidates/java" | grep "current" -v
+else
+    log::error "😓 No JDK Installed"
+fi
+
+
+

@@ -30,6 +30,11 @@ alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
 alias gl='$DOTLY_PATH/bin/dot git pretty-log'
 
+#Java
+alias usejdk="$DOTLY_PATH/bin/dot sdkman use-jdk"
+alias lsjdk="$DOTLY_PATH/bin/dot sdkman list-jdk"
+alias rmjdk="$DOTLY_PATH/bin/dot sdkman remove-jdk"
+
 #Maven
 alias mci="mvn clean install"
 alias mcist="mvn clean install -DskipTests"

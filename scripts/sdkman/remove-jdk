@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+if [ -d $SDKMAN_DIR ]; then   
+    jdk_version=$(ls "$SDKMAN_DIR/candidates/java" | grep "current" -v | fzf)
+    log::warning "😬  Removing JDK-$jdk_version"
+    sdk uninstall java $jdk_version
+fi
+
+
+
