@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+##? mvn v
+##?
+##? Usage:
+##?   version
+docs::parse "$@"
+
+if [ -d $SDKMAN_DIR ]; then
+   
+    sdk list maven > maven_versions.txt    
+    cat maven_versions.txt
+    
+    read -p 'Type the maven version to install: ' mvn_version
+
+    sdk install maven $mvn_version
+
+    log::success "🚀 Installed maven-$mvn_version successfully"
+    log::success "Please, restart your terminal to see the changes"
+fi
+
+
+

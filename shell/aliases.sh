@@ -41,7 +41,7 @@ alias mcist="mvn clean install -DskipTests"
 alias mfc="mvn git-code-format:format-code"
 
 #System
-alias fuck="sudo !!"
+alias fuck="sudo!!"
 
 #File
 alias count="wc -l"
