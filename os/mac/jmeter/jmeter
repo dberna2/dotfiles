@@ -1,0 +1,2 @@
+#!/bin/bash
+JAVA_HOME="$JAVA_HOME" exec "/usr/local/Cellar/jmeter/5.5/libexec/bin/jmeter"  "$@"
