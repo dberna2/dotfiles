@@ -3,6 +3,7 @@
 # Please adapt and uncomment the following lines:
     name = David Bernal
     email = leo.bernal1946@gmail.com
+	signingkey = B81CB2DD4BAA7225
 [init]
     defaultBranch = master
 [core]
