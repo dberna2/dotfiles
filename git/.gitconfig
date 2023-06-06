@@ -2,12 +2,13 @@
 [user]
 # Please adapt and uncomment the following lines:
     name = David Bernal
-    email = dlbernal@profile.es
+    email = leo.bernal1946@gmail.com
 [init]
     defaultBranch = master
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim
+
 [alias]
     reset-permissions = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=newer | git apply
 
@@ -20,3 +21,5 @@
     added = yellow
     changed = green
     untracked = cyan
+[commit]
+	gpgsign = true

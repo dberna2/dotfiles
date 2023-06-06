@@ -1,0 +1,30 @@
+<templateSet group="Java">
+  <template name="_pubm" value="public $RETURN$ $METHOD_NAME$($PARAMS$) {&#10;    log.info(&quot;Start -&gt; $METHOD_NAME$&quot;);&#10;&#10;    //TODO Implement code here!&#10;    &#10;    log.info(&quot;End &lt;- $METHOD_NAME$&quot;);&#10;    return null;$END$&#10;}" description="Public method" toReformat="true" toShortenFQNames="true">
+    <variable name="RETURN" expression="expectedType()" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="COMPLETION" value="false" />
+      <option name="JAVA_CODE" value="true" />
+      <option name="JAVA_COMMENT" value="false" />
+      <option name="JAVA_CONSUMER" value="false" />
+      <option name="JAVA_ELSE_PLACE" value="false" />
+      <option name="JAVA_EXPRESSION" value="false" />
+      <option name="JAVA_STATEMENT" value="false" />
+      <option name="JAVA_STRING" value="false" />
+    </context>
+  </template>
+  <template name="_log" value="private static final Logger LOGGER = LoggerFactory.getLogger($CLASS_NAME$.class);&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="_mother" value="public static $CLASS$ create($PARAMS$)&#10;{&#10;    return new $CLASS$$END$(value);&#10;}&#10;&#10;public static $CLASS$ random()&#10;{&#10;    return create(UuidMother::random())&#10;}" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="regularExpression(fileNameWithoutExtension(), &quot;(.*)Mother$&quot;, &quot;$1&quot;) " defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
